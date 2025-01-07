@@ -10,7 +10,7 @@ export default function Logout() {
 
   useEffect(() => {
     oktaAuth.signOut()
-    sessionStorage.removeItem("profileData");
+    // sessionStorage.removeItem("profileData");
     router.push('/')
   }, [oktaAuth, router])
 

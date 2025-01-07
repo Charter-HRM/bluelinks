@@ -4,6 +4,7 @@ import { useAuth, loginWithCredentials } from '../components/Auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { getSessionItem } from '@/lib/sessionStorageUtil'
 
 export default function Login() {
   const { authState } = useAuth()
@@ -17,6 +18,19 @@ export default function Login() {
       router.push('/dashboard')
     }
   }, [authState, router])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const headerDocument = document.getElementById('bluelinxHeader')
+      if (getSessionItem('profileData') == null && headerDocument) {
+        headerDocument.style.display = 'none'
+        const logoutDocument = document.getElementById('logoutHeader')
+        if (logoutDocument) {
+          logoutDocument.style.display = 'none'
+        }
+      }
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

@@ -19,6 +19,8 @@ export const signIn = async (username: string, password: string) => {
 
 export const signOut = async () => {
   localStorage.removeItem('user')
+  // console.log("The session storage data is : ", sessionStorage.getItem('profileData'));
+  // sessionStorage.removeItem('profileData');
 }
 
 export const getUser = async () => {

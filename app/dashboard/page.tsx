@@ -18,13 +18,13 @@ export default function Dashboard() {
   // // if (!authState?.isAuthenticated) {
   // //   return null
   // // }
-  const headerDocument = document.getElementById('bluelinxHeader')
-  console.log("The header document is : ", headerDocument);
-  if (sessionStorage.getItem('profileData')) {
-    if (headerDocument) {
-      headerDocument.style.display = 'none';
-    }
-  }
+  // const headerDocument = document.getElementById('bluelinxHeader')
+  // console.log("The header document is : ", headerDocument);
+  // if (sessionStorage.getItem('profileData')) {
+  //   if (headerDocument) {
+  //     headerDocument.style.display = 'none';
+  //   }
+  // }
 
   return (
     <div className="flex flex-col">
